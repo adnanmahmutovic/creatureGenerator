@@ -127,8 +127,8 @@ def combine_animals(animals_list):
             combined_animal = Animal(combined_name, combined_height, combined_weight, combined_fact)
             animals_list.append(combined_animal)
             print(f"Combined animal created: {combined_animal.name}")
-            print(f"Combined height: {combined_animal.height}")
-            print(f"Combined weight: {combined_animal.weight}")
+            print(f"Combined height: {combined_animal.height} inches")
+            print(f"Combined weight: {combined_animal.weight} lbs")
             print(f"Combined fact: {combined_animal.fact.capitalize()}")
         else:
             print("Invalid selection.")
