@@ -1,5 +1,6 @@
 import pickle
 
+# class for all animals / creatures
 class Animal:
     def __init__(self, name, height, weight, fact):
         self.name = name
@@ -7,6 +8,7 @@ class Animal:
         self.weight = weight
         self.fact = fact
 
+# all precreated animals that the user can use
 a1 = Animal("Golden Retriever", 23, 70, "Often used as service dogs")
 a2 = Animal("Poodle", 20, 65, "Friendly and intelligent")
 a3 = Animal("German Shepperd", 25, 85, "Excellent therapy dogs")
@@ -40,6 +42,7 @@ a30 = Animal("Unicorn", 66, 1300, "Resembles a horse, except it has evolved into
 
 animals_list = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30]
 
+# function for all main manu options
 def add_animal(animals_list):
     name = input("Enter the animal's name: ")
     height = float(input("Enter the animal's height (in inches): "))
@@ -120,12 +123,14 @@ def combine_animals(animals_list):
             animal2 = animals_list[choice2]
             
             combined_name = combine_names(animal1.name, animal2.name)
-            combined_height = (animal1.height + animal2.height) / 2
+            combined_height = (animal1.height + animal2.height) / 2 # combining height and weight then averaging
             combined_weight = (animal1.weight + animal2.weight) / 2
             combined_fact = f"{animal1.fact} and {animal2.fact}"
             
             combined_animal = Animal(combined_name, combined_height, combined_weight, combined_fact)
             animals_list.append(combined_animal)
+
+            # display after animals were combined
             print(f"Combined animal created: {combined_animal.name}")
             print(f"Combined height: {combined_animal.height} inches")
             print(f"Combined weight: {combined_animal.weight} lbs")
@@ -135,6 +140,7 @@ def combine_animals(animals_list):
     except ValueError:
         print("Invalid input. Please enter a number.")
 
+# main menu function
 def main_menu():
     animals_list = load_file()
     if not animals_list:
@@ -169,5 +175,6 @@ def main_menu():
         else:
             print("Invalid choice. Please enter a number between 1 and 6.")
 
+# initializing game
 if __name__ == "__main__":
     main_menu()
